@@ -1,0 +1,59 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Gil</title>
+    <link rel="stylesheet" href="{% static 'website/style.css' %}">
+    <script src="https://unpkg.com/htmx.org@1.8.4" integrity="sha384-wg5Y/JwF7VxGk4zLsJEcAojRtlVp1FKKdGy1qN+OMtdq72WRvX/EdRdqg/LOhYeV" crossorigin="anonymous"></script>
+    <script src="{% static 'website/script.js' %}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li id="/" ><a href="{% url 'website:home' %}">HOME</a></li>
+            <li id="/portfolio/"><a href="{% url 'website:portfolio' %}">PORTFOLIO</a></li>
+            <li id="/about/"><a  href="{% url 'website:about' %}">ABOUT</a></li>
+            <li id="/contact/"><a href="{% url 'website:contact' %}">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        document.getElementById("{{ request.path }}").classList.add("current-page");
+    </script>
+
+    <main id="main-content">
+        {% block content %}
+
+        {% endblock content %}
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <p>You can also reach me through:</p>
+            <ul>
+                <li><a target="_blank" href="#">linkedin</a></li>
+                <li><a target="_blank" href="#">github</a></li>
+                <li><a target="_blank" href="#">reddit</a></li>
+                <li><a target="_blank" href="#">medium</a></li>
+                <li><a target="_blank" href="#">youtube</a></li>
+            </ul>
+        </div>
+
+        <br>
+
+        <div class="cc-license">
+            <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br/>
+            This work is licensed under a <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+            <p>© 2023 Daniel Gil.</p>
+        </div>
+            
+    </footer>
+
+</body>
+</html>

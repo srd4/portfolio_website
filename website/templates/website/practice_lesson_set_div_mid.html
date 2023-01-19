@@ -1,0 +1,44 @@
+{% load humanize %}
+{% if practice_lesson_set %}
+    <ul>
+        {% for practice in practice_lesson_set %}
+        <li>
+            <div class="project-container" id="project-{{forloop.counter}}">
+                <div class="project-contents">
+                    <script>
+                        assignPatternClass(document.getElementById("project-{{forloop.counter}}"), '{{forloop.counter}}');
+                    </script>
+                    <div class="practice-name-simple">
+                        <h2>{{practice|capfirst}}</h2>
+                        {% if practice.active %}
+                            <span class="active">active</span>
+                        {% endif %}
+                    </div>
+                    {% if practice.description %}
+                        <div class="practice-description-mid">
+                            <p>{{practice.description|capfirst}}</p>
+                        </div>
+                    {% endif %}
+
+                    <div class="skills-used-container">
+                        <ul>
+                            {% if practice.skills.all %}
+                                    {% for skill in practice.skills.all %}
+                                        <li class="technology-used {{skill}}">
+                                            <p>{{skill}}</p>
+                                        </li>
+                                    {% endfor %}
+                            {% endif %}
+                        </ul>
+                    </div>
+                    {% if practice.link %}
+                        <a target="_blank" class="project-check-button" href="{{practice.link}}">Check it out</a>
+                    {% endif %}
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    nothing to see.
+{% endif %}

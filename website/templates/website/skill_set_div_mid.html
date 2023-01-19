@@ -1,0 +1,38 @@
+{% if skill_set %}
+    <ul>
+        {% for skill in skill_set %}
+        <li>
+            <div class="skill-title-bar">
+                <div class="skill-name-mid">
+                    <div class="skill-title">
+                        <h3>{{skill|capfirst}}</h3>
+                    </div>
+                    <div class="practice-active-mid">
+                        {% if skill.is_in_use %}
+                            <span class="on-button">in use</span>
+                        {% endif %}
+                        <span class="number" style="float:right;">{{skill.level}}%</span>
+                    </div>
+                </div>
+                <div class="skill-level-mid">
+                    <div class="progress-bar-{{skill.level}}">
+                    </div>
+                </div>
+                <style>
+                    .progress-bar-{{skill.level}} {
+                        height: 10px;
+                        background-color: #e3e3e3;
+                        width: {{skill.level}}%;
+                        margin: 0;
+                    }
+                </style>
+            </div>
+            <div class="skill-outcome-mid">
+                {{skill.outcome|capfirst}}
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    nothing to see.
+{% endif %}

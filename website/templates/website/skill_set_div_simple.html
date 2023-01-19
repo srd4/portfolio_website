@@ -1,0 +1,29 @@
+{% if skill_set %}
+    <ul>
+        {% for skill in skill_set %}
+        <li>
+            <div class="skill-name-simple">
+                <p>{{skill|capfirst}}</p>
+            </div>
+            {% if skill.is_learning %}
+                <div class="practice-active-simple">
+                    <p>learning</p>
+                </div>
+            {% endif %}
+            <div class="skill-level-simple">
+                <div class="progress-bar-{{skill.level}}">
+                </div>
+            </div>
+            <style>
+                .progress-bar-{{skill.level}} {
+                    height: 10px;
+                    background-color: #e3e3e3;
+                    width: {{skill.level}}%;
+                }
+            </style>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    nothing to see.
+{% endif %}

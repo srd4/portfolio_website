@@ -1,0 +1,46 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="presentation-card">
+        <div class="image">
+            <img src="{% static 'website\portrait_daniel.png' %}" alt="">
+        </div>
+
+        <div class="column">
+            <div class="goal">
+                <p>Hi I'm Daniel. I build viable versions of (web) app ideas that I think are cool.</p>
+            </div>
+
+            <div class="bottom">
+                <h2>Daniel Gil</h2>
+                <p>Web developer</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="home-container skills div-pattern-one">
+        <h1>Skill-set</h1>
+
+        <div hx-trigger="load" hx-get="{% url 'website:skill_set' %}" hx-swap="innerHTML" class="skill-set">
+        </div>
+        
+        <div class="more-button">
+            <a target="_blank" href="{% url 'website:about' %}#skill-set">Check full skill set</a>
+        </div>
+    </div>
+
+
+    <div class="home-container portfolio div-pattern-two">
+        <h1>Projects</h1>
+        
+        <div hx-trigger="load" hx-get="{% url 'website:practice_lesson_set' %}" hx-swap="innerHTML" class="portfolio">
+        </div>
+
+        <div class="more-button">
+            <a target="_blank" href="{% url 'website:portfolio' %}#projects">Check all work</a>
+        </div>
+    </div>
+
+
+{% endblock content %}

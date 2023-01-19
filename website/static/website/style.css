@@ -1,0 +1,568 @@
+html {
+    background-color: #131415;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 100;
+    color: #e3e3e3;
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    padding: 0;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.current-page a{
+    font-weight: 400;
+    border-bottom: solid;
+    color: #ffdb59;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav a:hover {
+    color: #ffdb59;
+}
+
+nav a {
+    color: #615b44;
+    text-decoration: none;
+}
+
+/*home*/
+
+.image {
+    display: flex;
+    width: 180px;
+    background-color: #e3e3e3;
+    border-radius: 20px;
+    border: none;
+    justify-content: center;
+    padding: 5px;
+    height: 250px;
+}
+
+.image img {
+    border-radius: inherit;
+    width: 180px;
+    /*transform: scaleX(-1);*/
+}
+
+.presentation-card {
+    justify-content: center;
+    display: flex;
+    border-radius: 20px;
+    width: 75%;
+    margin: 6rem auto;
+}
+
+.presentation-card .column {
+    padding: 10px;
+}
+
+.column {
+    width: 75%;
+}
+
+.goal p {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #e3e3e3;
+    margin: 0;
+}
+
+.bottom p {
+    font-size: 1rem;
+    margin: 0;
+    color: #ffdb59; 
+}
+
+.bottom h2 {
+    font-size: 3rem;
+    margin-top: 2rem;
+    color: #ffdb59;
+}
+
+.practice-name-simple .active {
+    background: limegreen;
+    padding: 3px 9px;
+    border-radius: 1rem;
+    box-shadow: inset 0 0 2px 1px #404040;
+    font-weight: 500;
+    margin: 0 0.25rem;
+}
+
+.practice-name-simple h3 {
+    display: inline-block;
+}
+
+
+/*contents*/
+
+.more-button {
+    text-align: center;
+}
+
+/*skill-set*/
+
+.div-pattern-one {
+    background-color: #615b44;
+    color: #e3e3e3;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 2rem 0px;
+}
+
+.div-pattern-one h1 {
+    color: #e3e3e3;
+}
+
+.div-pattern-one a {
+    text-decoration: none;
+    color: #131415;
+    font-weight: 600;
+    font-size: 2rem;
+    background-color: #e3e3e3;
+    border-radius: 32px;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+
+.skill-set ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-set-mid ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-set p {
+    margin: 0;
+    padding: 0;
+}
+
+.skill-set h3 {
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+.skill-level-simple {
+    border: #e3e3e3 solid;
+    width: 50%;
+    margin: auto;
+    height: 10px;
+}
+
+.skill-name-simple {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+ul, h1 {
+    margin:0;
+}
+
+
+/*portfolio*/
+
+.div-pattern-two {
+    background-color: #131415;
+    color: #e3e3e3;
+    font-size: 1.5rem;
+    margin: 20px 0px;
+    padding: 0 10%;
+    padding-bottom: 20px;
+    padding-top: 5px;
+}
+
+.div-pattern-two h1 {
+    color: #e3e3e3;
+    
+}
+
+.div-pattern-two a {
+    text-decoration: none;
+    color: #131415;
+    font-weight: 600;
+    font-size: 2rem;
+    background-color: #e3e3e3;
+    border-radius: 32px;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: auto;
+    margin-top: 20px;
+}
+
+
+.portfolio ul {
+    list-style: none;
+    padding: 0;
+}
+
+.portfolio p {
+    margin: 0;
+    padding: 0;
+}
+
+.portfolio h3 {
+    margin: 0;
+    margin-top: 1rem;
+    padding: 0;
+}
+
+.practice-name-simple h2{
+    display: inline-block;
+}
+
+.practice-name-simple{
+    display: flex;
+    align-items: center;
+}
+
+/**/
+
+.div-pattern-three {
+    background-color:#e3e3e3;
+    color:  #4e4f61;
+    font-size: 1.5rem;
+    margin: 20px 0px;
+    padding: 0 10%;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.div-pattern-three h1 {
+    color:  #4e4f61;
+}
+
+.div-pattern-three .contact-button {
+    color: #e3e3e3;
+    font-weight: 600;
+    font-size: 2rem;
+    background-color: #ffdb59;
+    border-radius: 32px;
+    padding: 15px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.work-with-me p {
+    margin: 0;
+    padding: 0;
+}
+
+.work-with-me h3 {
+    margin: 0;
+    margin-top: 40px;
+    padding: 0;
+}
+
+
+.form-field * {
+    width: 100%;
+    height: 100%;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+}
+
+.form-field {
+    width: 65%;
+    height: 2.5rem;
+    margin: 5px auto;
+}
+
+.message {
+    height: 200px;
+}
+
+/*footer*/
+
+.footer-links, .cc-license{
+    color: #e3e3e3;
+    text-align: center;
+}
+
+.footer-links ul{
+    justify-content: center;
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    padding: 0 5px;
+}
+
+footer a {
+    color: #e3e3e3;
+}
+
+footer a:hover{
+    color: #ffdb59;
+    text-decoration: none;
+}
+
+/*portfolio section*/
+
+
+.portfolio-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.portfolio-container h1 {
+    text-align: center;
+    margin: 5rem auto;
+}
+
+
+.project-contents {
+    margin: 0rem auto;
+    padding: 1rem;
+    width: 75%;
+    margin: auto;
+    
+}
+
+.practice-description-mid p {
+    font-weight: 400;
+    margin: 5px 0px;
+}
+
+.skills-used-container ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+}
+
+.skills-used-container ul li p{
+    text-transform: uppercase;
+    margin: 0 10 0 0;
+}
+
+.skills-used-container ul li{
+    text-transform: uppercase;
+    margin: 0 10 0 0;
+}
+
+.technology-used {
+
+}
+
+.project-check-button {
+    text-decoration: none;
+    color: #131415;
+    font-weight: 600;
+    background-color: #e3e3e3;
+    border-radius: 32px;
+    padding: 5px 8px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.skills-used-container {
+    margin-top: 10px;
+}
+
+/*project pattern specific changes*/
+
+.pattern-1{
+    background-color: #e3e3e3;
+    color: #4e4f61;
+}
+
+.pattern-1 .project-check-button  {
+    background-color: #ffdb59;
+    color: #131415;
+}
+
+
+.pattern-2{
+    background-color: #4e4f61;
+    color: #e3e3e3;
+}
+
+.pattern-2 .project-check-button  {
+    background-color: #615b44;
+    color: #e3e3e3;
+}
+
+
+.pattern-3{
+    background-color: #615b44;
+    color: #e3e3e3;
+}
+
+.pattern-3 .project-check-button  {
+    background-color: #4e4f61;
+    color: #e3e3e3;
+}
+
+.technology-used p{
+    color: white;
+    padding: 0 0.2rem;
+}
+
+/*
+.django p{
+    background-color: #0C4B33;
+}
+
+.python p{
+    background-color: #2b5b84;
+}
+
+.html p{
+    background-color: #FFA500;
+}
+
+.css p{
+    background-color: #2965f1;
+}
+
+.javascript p{
+    background-color: #323330;
+}
+
+.pythonanywhere p{
+    background-color: #139FD7;
+}
+
+.sqlite p{
+    background-color: #615b44;
+}
+
+.uml p{
+    background-color: #4e4f61;
+}
+
+.ajax p{
+    background-color: #ffdb59;
+}
+
+.htmx p{
+    background-color: #131415;
+}
+
+*/
+
+/*about me page*/
+
+.about-contents, .skill-set-contents {
+    width: 75%;
+    margin: 2rem auto;
+    font-size: 1.5rem;
+    padding: 2rem 0px;
+}
+
+.skill-set-container {
+    background-color: #4e4f61;
+    padding: 10px 0px;
+}
+
+.check-button.big {
+    display: block;
+    text-align: center;
+}
+
+.check-button.big a {
+    text-decoration: none;
+    color: #131415;
+    font-weight: 600;
+    font-size: 1.5rem;
+    background-color: #e3e3e3;
+    border-radius: 32px;
+    padding: 10px 25px;
+    text-transform: uppercase;
+}
+
+.skill-level-mid {
+    border: #e3e3e3 solid;
+    height: 10px;
+}
+
+.skill-name-mid {
+    display: flex;
+}
+
+
+.skill-name-mid .on-button {
+    background: limegreen;
+    padding: 3px 9px;
+    border-radius: 1rem;
+    box-shadow: inset 0 0 2px 1px #404040;
+    font-weight: 500;
+    margin: 0 .25rem;
+}
+
+.skill-title-bar {
+    display: flex;
+    flex-direction: column;
+}
+
+.practice-active-mid {
+    width: 100%;
+}
+
+.skill-set ul li{
+}
+
+.skill-set-mid ul li{
+    padding: 1rem 2rem;
+}
+
+
+/*contacts page*/
+
+.contact-info a {
+    font-size: 2rem;
+    color: #e3e3e3;
+}
+
+.contact-info a:hover{
+    color: #ffdb59;
+    text-decoration: none;
+}
+
+.contact-info {
+    text-align: center;
+    margin: 6rem 0px;
+}
+
+.contact-info h1{
+    margin: 1rem;
+}

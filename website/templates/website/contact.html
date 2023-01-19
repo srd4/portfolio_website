@@ -1,0 +1,28 @@
+{% extends 'website/base.html' %}
+{% block content %}
+<div class="contact-container" id="reach-out">
+    <div class="contact-info">
+        <h1>Contact info</h1>
+
+        <a target="_blank" href="tel: 312-255-5890">
+            (+57) 3122555890
+        </a>
+
+        <br>
+
+        <a target="_blank" href="mailto: danielgilbarrera3300@gmail.com">
+            danielgilbarrera3300@gmail.com
+        </a>
+    </div>
+
+    <div class="home-container contact div-pattern-three">
+        <h1>Work with me!</h1>
+        
+        <div class="work-with-me" hx-trigger="load" hx-get="{% url 'website:work_with_me_form' %}" hx-swap="innerHTML">
+
+        </div>
+    </div>
+
+    
+</div>
+{% endblock content %}

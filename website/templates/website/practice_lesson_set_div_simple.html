@@ -1,0 +1,19 @@
+{% if practice_lesson_set %}
+    <ul>
+        {% for practice in practice_lesson_set %}
+        <li>
+            <div class="practice-name-simple">
+                <h3>{{practice|capfirst}}</h3>
+                {% if practice.active %}
+                    <span class="active">active</span>
+                {% endif %}
+            </div>
+            <div class="practice-level-simple">
+                {{practice.outcome|capfirst}}
+            </div>
+            {% endfor %}
+        </li>
+    </ul>
+{% else %}
+    nothing to see.
+{% endif %}

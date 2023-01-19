@@ -1,0 +1,8 @@
+{% extends 'website/base.html' %}
+{% block content %}
+    <div class="portfolio-container" id="projects">
+        <h1>Projects and experience</h1>
+        <div class="projects-container" hx-trigger="load" hx-get="{% url 'website:practice_lesson_set' %}?detail=mid" hx-swap="outerHTML">
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="about-container">
+    <div class="about-contents">
+        <h1>About me</h1>
+        <p>A creative developer always looking for new experiences, with a knack for turning app ideas into a viable reality. My expansive personality and compulsive implementer tendencies help me move smoothly through planning-and-implementation cycles.</p>
+        <div class="check-button big">
+            <a target="_blank" href="{% static 'website\daniel_gil_resume.pdf' %}">Resumé</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="skill-set-container">
+    <div class="skill-set-contents" id="skill-set">
+        <h1>Skills and technologies</h1>
+        <div class="skills">
+            <div hx-trigger="load" hx-get="{% url 'website:skill_set' %}?detail=mid" hx-swap="innerHTML" class="skill-set-mid">
+            </div>
+        </div>
+</div>
+</div>
+
+{% endblock content %}

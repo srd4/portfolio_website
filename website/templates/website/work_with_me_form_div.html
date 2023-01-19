@@ -1,0 +1,20 @@
+<form hx-post="{% url 'website:work_with_me_form' %}">
+    {% csrf_token %}
+    <div class="form-errors">
+        {{form.non_field_errors}}
+    </div>
+
+    <div class="form-field email">
+        {{form.email}}
+    </div>
+
+    <div class="form-field name">
+        {{form.name}}
+    </div>
+
+    <div class="form-field message">
+        {{form.message}}
+    </div>
+
+    <button class="contact-button">Contact</button>
+</form>
