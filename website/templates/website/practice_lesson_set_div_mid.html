@@ -31,8 +31,11 @@
                             {% endif %}
                         </ul>
                     </div>
-                    {% if practice.link %}
-                        <a target="_blank" class="project-check-button" href="{{practice.link}}">Check it out</a>
+                    {% if practice.app_link %}
+                        <a target="_blank" class="project-check-button" href="{{practice.app_link}}">Check app</a>
+                    {% endif %}
+                    {% if practice.code_link %}
+                        <a target="_blank" class="project-check-button" href="{{practice.code_link}}">Check code</a>
                     {% endif %}
                 </div>
             </div>

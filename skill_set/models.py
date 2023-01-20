@@ -31,7 +31,8 @@ class Lesson(models.Model):
     description = models.TextField(max_length=2**9, blank=True, null=True)
     parent_lesson = models.ForeignKey('self', on_delete=models.SET_NULL, blank=True, null=True)
     tags = models.ManyToManyField(Tag, blank=True)
-    link = models.URLField(blank=True)
+    code_link = models.URLField(blank=True)
+    app_link = models.URLField(blank=True)
     active = models.BooleanField(default=False)
     skills = models.ManyToManyField('Skill', blank=True)
 
