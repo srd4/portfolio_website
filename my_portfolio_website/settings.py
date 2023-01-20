@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'notebook_2.apps.Notebook2Config',
     'skill_set.apps.SkillSetConfig',
     'website.apps.WebsiteConfig',
     'django.contrib.admin',
