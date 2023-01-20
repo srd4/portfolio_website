@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from skill_set.models import Skill, Lesson
 from django.db.models import Count
-from django.core.mail import send_mail
 from .forms import WorkWithMe
 
 
@@ -16,13 +15,7 @@ def work_with_me_form(request):
     if request.method == 'POST':
         form = WorkWithMe(request.POST)
         if form.is_valid():
-            send_mail(
-                'Someone wants to work with you',
-                "\n".join(i for i in form.cleaned_data.values()),
-                'danielgilbarrera3300@gmail.com',
-                ['danielgilbarrera3300@gmail.com'],
-                fail_silently=False,
-            )
+            form.save()
             return render(request, 'website/work_with_me_form_success_div.html')
 
     return render(request, 'website/work_with_me_form_div.html', {'form': form})

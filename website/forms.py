@@ -1,6 +1,7 @@
 from django import forms
+from .models import Message
 
-class WorkWithMe(forms.Form):
-    email = forms.EmailField(label='Your email adress', max_length=2**7)
-    name = forms.CharField(label='Your name', max_length=2**6)
-    message = forms.CharField(widget=forms.Textarea, label='Your message', max_length=2**9)
+class WorkWithMe(forms.ModelForm):
+    class Meta:
+        model = Message
+        fields = "__all__"
