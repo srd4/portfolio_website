@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'sanke.apps.SankeConfig',
     'skill_set.apps.SkillSetConfig',
     'website.apps.WebsiteConfig',
     'notebook_2.apps.Notebook2Config',
@@ -42,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-
 ]
 
 REST_FRAMEWORK = {
