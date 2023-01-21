@@ -1,0 +1,14 @@
+<div class="nav-bar">
+    <a id="home-button" href="{% url 'notebook_2:containers' %}">home</a>
+
+    <form id="search-form" action="{% url 'notebook_2:search' %}" method="get">
+        <input id="search-bar" type="text" placeholder="search" name="search_query">
+    </form>
+
+    <span style="color: white;">{{ request.user|title }}</span>
+
+    
+    <a id= "logout" href="{% url 'notebook_2:logout' %}">logout</a>
+    <a id="new-item-button" style="color: white;" href="{% url 'notebook_2:item_create' %}?actionable={{container.seeingActionables}}&container_pk={{container.id}}">+</a>
+    
+</div>

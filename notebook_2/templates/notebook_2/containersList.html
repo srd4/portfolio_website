@@ -1,0 +1,39 @@
+{% for container in container_list %}
+    <div hx-swap="outerHTML" class="container-div" id="container-group-{{container.id}}">
+        <div class="container-row" id="container-{{container.id}}" onmouseover="showEditButtons(this, true)" onmouseleave="showEditButtons(this, false)">
+            {% if container.getChildren|length %}
+            <!--clicking on bullet points produces an htmx swap with containerList.html targetted at parent div through the function view called container_collapse-->
+            <!--the container_collapse view returns an up-to-date, with the container's attributes, rendered template-->
+                {% if container.collapsed %}
+                <i class="fa-solid fa-caret-right" hx-target="#container-group-{{container.id}}" hx-post="{% url 'notebook_2:container_collapse' container.id%}" hx-trigger="click" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'></i>
+                {% else %}
+                <i class="fa-solid fa-caret-down"  hx-target="#container-group-{{container.id}}" hx-post="{% url 'notebook_2:container_collapse' container.id%}" hx-trigger="click" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'></i>
+                {% endif %}
+            {% endif %}
+
+            <a class="container-name" href="{% url 'notebook_2:container_detail' container.id %}">{{container}}</a>
+            <!--getItems and countTreeItems are methods from model that help count data displayed on container view-->
+            {% if container.getChildren %}
+                <span class="item-count"> {{ container.getItems|length }} ({{ container.countTreeItems }})</span>
+            {% else %}
+                <span class="item-count">{{ container.getItems|length }}</span>
+            {% endif %}
+
+            <div id="edit-buttons-{{container.id}}" class="edit-buttons">
+                <!--button for editing/updating container-->
+                <a class="fa-solid fa-pen" href= "{% url 'notebook_2:container_update' container.id %}"></a>
+                <!--button for deleting a container-->
+                <a class="fa-solid fa-x" href= "{% url 'notebook_2:container_delete' container.id %}"></a>
+            </div>
+        </div> 
+        
+        <!--if there are subcontainers-->
+        {% if container.getChildren|length %}
+            <!--hide div (display:none;) if container.collapsed == True. 'collapsed' is an attribute the model has and its saved in database-->
+                <div {% if container.collapsed %} style="display: none;" {% endif %} id="{{container.id}}-{{ forloop.counter }}" class="child-group">
+                    {% include "notebook_2/containersList.html" with container_list=container.getChildren %}
+                </div>
+        {% endif %}
+
+    </div>
+{% endfor %}

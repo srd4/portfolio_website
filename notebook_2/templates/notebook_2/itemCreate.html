@@ -1,0 +1,36 @@
+{% extends 'notebook_2/main.html' %}
+{% block content %}
+<!--handle case page being called from inside container or not-->
+{% if container %}
+    <h1 class="crud-h">Add new item to "{{ container }}"</h2>
+{% else %}
+    <h1 class="crud-h">Add new item</h2>
+{% endif %}
+<div>
+    <form class="crud-form" action="" method="post">
+        {% csrf_token %}
+
+        {{form.parentContainer}}
+
+        {{form.statement}}
+
+        {{form.actionable.label}}:
+        {{form.actionable}}
+
+        <br>
+
+        {{form.done.label}}:
+        {{form.done}}
+
+
+        <!--handle case page being called from inside container or not-->
+        <input type="submit" value="Create">
+
+        {% if container %}
+            <input type="submit" onclick="window.location='{% url 'notebook_2:container_detail' container.id %}' ; return false;" value="Cancel">
+        {% else %}
+            <input type="submit" onclick="window.location='{% url 'notebook_2:containers' %}' ; return false;" value="Cancel">
+        {% endif %}
+    </form>
+</div>
+{% endblock content %}

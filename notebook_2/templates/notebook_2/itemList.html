@@ -1,0 +1,29 @@
+<!--with htmx in containerDetail view's template, this anchor replaces/updates nav bar button with the same id-->
+<a hx-swap-oob="true" id="new-item-button" href="{% url 'notebook_2:item_create' %}?on_actionables_tab={{container.seeingActionables}}&container_pk={{container.id}}">&#43;</a>
+
+<!--with htmx in containerDetail view's template, this div replaces one with the same id on 'containerDetail.html' -->
+<div hx-swap-oob="true" id="item_list">
+{% if querysets %}
+    {% for pair in querysets %}
+        {% if pair.0|length == 0 %}
+            <b>untagged</b>
+            <hr>
+            {% for item in pair.1 %}
+                    {% include 'notebook_2/item.html' %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    
+    {% for pair in querysets %}
+        {% if pair.0|length > 0 %}
+            {% for tag in pair.0 %}
+                <b>{{tag}}</b>
+            {% endfor %} 
+                <hr>
+                {% for item in pair.1 %}
+                        {% include 'notebook_2/item.html' %}
+                {% endfor %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+</div>

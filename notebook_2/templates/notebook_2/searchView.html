@@ -1,0 +1,62 @@
+{% extends 'notebook_2/main.html' %}
+{% block content %}
+
+{% include 'notebook_2/navigation_bar.html' %}
+
+<h1>Container results</h1>
+
+{% if container_list %}
+    {% for container in container_list %}
+    <div>
+        <i class="circle"></i>
+        <a href="{% url 'notebook_2:container_detail' container.id %}">{{container}} </a>
+    </div>
+    {% endfor %}
+{% else %}
+    No container results.
+{% endif %}
+    
+<hr>
+
+<h1>Item results</h1>
+
+<div id="not-archived"> 
+    <div class="container-tab">
+        <button class="container-tab-button" id="actionable" onclick="pressSearchTab(this);" >actionable</button>
+        <button class="container-tab-button" id="non-actionable" onclick="pressSearchTab(this);">non-actionable</button>
+    </div>
+
+    <div class="item_list" id="actionable-list">
+        {% if item_list %}
+    <div>
+        {% for item in item_list %}
+            {% if item.actionable %}
+                {% include 'notebook_2/item.html' %}
+            {% endif %}
+        {% endfor %}
+        </div>
+        {% else %}
+        <p>No item results.</p>
+        {% endif %}
+    </div>
+
+    <div class="item_list" style="display: none;" id="non-actionable-list" >
+        {% if item_list %}
+        <div class="item_div">
+            {% for item in item_list %}
+                {% if not item.actionable %}
+                    {% include 'notebook_2/item.html' %}
+                {% endif %}
+            {% endfor %}
+            </div>
+        {% else %}
+        <p>No item results.</p>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+    pressTab(document.getElementById('actionable'));
+</script>
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'notebook_2/main.html' %}
+{% block content %}
+{% include 'notebook_2/navigation_bar.html' %}
+
+<h1 class="crud-h">Your Containers.</h1>
+<a class="fa-solid fa-plus" href="{% url 'notebook_2:container_create' %}"></a>
+
+<hr>
+
+{% if container_list %}
+    {% include 'notebook_2/containersList.html'%}
+{% else %}
+    <p>No containers seem to be available.</p>
+{% endif %}
+{% endblock content %}

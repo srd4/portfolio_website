@@ -1,0 +1,12 @@
+{% extends 'notebook_2/main.html' %}
+{% block content %}
+<h1 class="crud-h">Login to Notebook 2.0</h1>
+<div id="login">
+    <form class="crud-form" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <input id="bton" type="submit" value="Login">
+    </form>
+
+    <p>New to Notebook 2.0? <a href="{% url 'notebook_2:register' %}">Register</a></p>
+{% endblock content %}

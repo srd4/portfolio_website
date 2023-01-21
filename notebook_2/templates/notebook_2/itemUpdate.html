@@ -1,0 +1,27 @@
+{% extends 'notebook_2/main.html' %}
+{% block content %}
+<h1 class="crud-h">Update item</h2>
+<form class="crud-form" action="" method="post">
+    {% csrf_token %}
+
+    {{form.parentContainer}}
+
+    {{form.statement}}
+
+    {{form.actionable.label}}:
+    {{form.actionable}}
+
+    <br>
+
+    {{form.done.label}}:
+    {{form.done}}
+
+    <br>
+    {{form.tags.label}}:
+    {{form.tags}}
+
+    <input type="submit" value="Save">
+    <input type="submit" onclick="window.location='{% url 'notebook_2:container_detail' item.parentContainer.id %}' ; return false;" value="Cancel">
+    
+</form>
+{% endblock content %}

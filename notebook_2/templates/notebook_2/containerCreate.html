@@ -1,0 +1,23 @@
+{% extends 'notebook_2/main.html' %}
+{% block content %}
+<div class="crud-form-container">
+    <h1 class="crud-h">Add new container</h1>
+    <form class="crud-form" action="" method="post">
+        {% csrf_token %}
+        {{form.non_field_errors}}
+        {{form.}}
+        {{form.name}}
+        <br>
+        {{form.description}}
+        <br>
+        <span>Parent container:</span>
+        <br>
+        {{form.parentContainer}}
+        <br>
+        <div class="submit-buttons">
+            <input type="submit" value="Create">
+            <input type="submit" onclick="window.location='{% url 'notebook_2:containers' %}'; return false;" value="Cancel">
+        </div>
+    </form>
+</div>
+{% endblock content %}

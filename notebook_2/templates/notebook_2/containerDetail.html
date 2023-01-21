@@ -1,0 +1,29 @@
+{% extends 'notebook_2/main.html' %}
+{% block content %}
+<div>
+  {% include 'notebook_2/navigation_bar.html' %}
+  
+  <h1 class="crud-h" id="container-name">{{ container|title}}</h1>
+
+  <p style="text-align: center;">{{ container.description|capfirst}}</p>
+  
+  <a class="fa-solid fa-pen" href= "{% url 'notebook_2:container_update' container.id %}"></a>
+  <a class="fa-solid fa-x" href= "{% url 'notebook_2:container_delete' container.id %}"></a>
+  
+  <hr>
+
+  <div class="container-tab">
+    <button class="container-tab-button" id="actionable" onclick="pressTab(this)" hx-trigger="click" hx-target="#item_list" hx-get="{% url 'notebook_2:container_changeTab' pk=container.id %}?on_actionables_tab=True">actionable</button>
+    <button class="container-tab-button" id="non-actionable" onclick="pressTab(this)" hx-trigger="click" hx-target="#item_list" hx-get="{% url 'notebook_2:container_changeTab' pk=container.id %}?on_actionables_tab=False">non-actionable</button>
+  </div>
+  
+  <div hx-trigger="load" id="item_list" hx-get="{% url 'notebook_2:container_changeTab' pk=container.id %}?on_actionables_tab={{container.seeingActionables}}">
+    <!--htmx fills this in when the page loads requesting from the url 'container_changeTab' using template 'itemList.html'-->
+  </div>
+
+  <script>
+    initializeTab('{{ container.seeingActionables }}')
+  </script>
+</div>
+
+{% endblock content %}
