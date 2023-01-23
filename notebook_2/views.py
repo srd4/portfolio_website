@@ -83,6 +83,7 @@ def containerCollapse(request, pk):
     c.toggleCollapsed()
     return render(request, 'notebook_2/containersList.html', {'container_list':[c,]})
 
+
 class loginView(LoginView):
     template_name = "notebook_2/login.html"
     next_page = reverse_lazy('notebook_2:containers')
