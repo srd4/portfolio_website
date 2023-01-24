@@ -68,6 +68,9 @@ nav a {
     border-radius: inherit;
     width: 180px;
     /*transform: scaleX(-1);*/
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+
 }
 
 .presentation-card {
