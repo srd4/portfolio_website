@@ -4,7 +4,6 @@ from django.db.models import Count
 from .forms import WorkWithMe
 
 
-
 def work_with_me_form(request):
     form = WorkWithMe()
 
