@@ -1,0 +1,194 @@
+html {
+    overflow-y: scroll;
+}
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    
+}
+
+body {
+    font-family: nunito;
+    font-size: 25px;
+    width: 50%;
+    margin: auto;
+}
+
+.crud-h {
+    width: fit-content;
+    margin: .2em auto;
+}
+
+.fa-solid.fa-pen {
+    color: black;
+    cursor: pointer;
+}
+
+.fa-solid.fa-x {
+    color: red;
+    cursor: pointer;
+}
+
+.fa-solid.fa-lightbulb {
+    color: gold;
+    cursor: pointer;
+}
+
+
+
+/*nav-bar*/
+
+.nav-bar *{
+    display: inline-block;
+    font-size: 30px;
+}
+
+#new-item-button {
+    float: right;
+}
+
+#logout {
+    float: right;
+}
+
+
+.nav-bar a {
+    text-align: center;
+    margin: none;
+    padding: 0px 15px;
+    min-width: 50px;
+    color: white;
+}
+
+.nav-bar a:hover {
+    background-color: rgb(200, 41, 34);
+}
+
+.nav-bar {
+    background-color: #e4433a;
+}
+
+/*containersView*/
+
+.edit-buttons {
+    display: inline;
+    float: right;
+    visibility: hidden;
+    padding-right: 10px;
+}
+
+.child-group {
+    margin-left: 20px;
+}
+
+.container-div a{
+    text-decoration: none;
+    color: black;
+}
+
+.container-row {
+    border-radius: 5px;
+}
+
+.item-count {
+    color: gray;
+}
+
+.container-div i {
+    cursor: pointer;
+}
+
+.fa-solid.fa-plus {
+    color: green;
+    margin: none;
+    padding: 5px 15px;
+
+}
+
+#search-form {
+    width: 20%;
+}
+
+#search-bar {
+    font-family: nunito;
+    border: none;
+    height: 35px;
+    width: 100%;
+}
+
+#search-form:focus-within{
+    width: 33%;
+}
+
+
+
+/*crud froms*/
+
+.crud-form-container > *{
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.crud-form input, textarea, select, checkbox{
+    font-family: nunito;
+    font-size: 30px;
+    margin: 5px auto;
+    width: 100%;
+}
+
+.crud-form input, select{
+    width: 100%;
+    height: 100%;
+}
+
+.crud-form textarea {
+    height: 12rem;
+}
+
+#id_done, #id_actionable {
+    width: 25px;
+    height: 25px;
+}
+
+
+/*containerDetailView*/
+
+.container-tab {
+    display: flex;
+}
+
+.container-tab-button {
+    cursor: pointer;
+    font-family: nunito;
+    font-size: 25px;
+    color: white;
+    padding: 0px;
+    display: inline;
+    border: none;
+    margin: 0;
+    background-color:#e4433a;
+    width: 50%;
+}
+
+.crossed-out-item {
+    text-decoration: line-through;
+}
+
+.fa-regular.fa-circle-check, .fa-regular.fa-circle {
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    background-color: transparent;
+    font-size: 25px;
+    padding: 0px;
+}
+
+.fa-regular.fa-circle-check {
+    color: green;
+}
+
+.item {
+    border-radius: 5px;
+}
