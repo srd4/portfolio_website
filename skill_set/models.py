@@ -35,6 +35,7 @@ class Lesson(models.Model):
     app_link = models.URLField(blank=True)
     active = models.BooleanField(default=False)
     skills = models.ManyToManyField('Skill', blank=True)
+    image = models.URLField(blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

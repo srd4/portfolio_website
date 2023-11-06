@@ -403,6 +403,22 @@ footer a:hover{
 
 /*project pattern specific changes*/
 
+.project-contents .practice-image-container { /* Add a new class for the container div if needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5% 0 5% 0; /* Remove default margins if necessary */
+    padding: 0; /* Adjust padding as needed */
+}
+
+.practice-image {
+    width: 100%; /* Or the width you set before */
+    height: auto; /* Keep the aspect ratio */
+    border-radius: 10px; /* This value can be increased or decreased to your liking */
+}
+
+
+
 .pattern-1{
     background-color: #e3e3e3;
     color: #4e4f61;

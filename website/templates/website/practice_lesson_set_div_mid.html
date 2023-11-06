@@ -37,6 +37,14 @@
                     {% if practice.code_link %}
                         <a target="_blank" class="project-check-button" href="{{practice.code_link}}">Check code</a>
                     {% endif %}
+
+                    {% if practice.image %}
+                    <div class="practice-image-container">
+                        <a href="{{practice.image}}">
+                            <img class="practice-image" src="{{practice.image}}" title="{{practice}}" />
+                        </a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </li>
